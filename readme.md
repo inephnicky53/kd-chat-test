@@ -3,7 +3,7 @@
 Le but de ce test est de développer une messagerie instantanée en utilisant une API
 GraphQL et React
 
-![Screenshot de l'app](./interface.png)
+![Screenshot de l'app](./img.png)
 
 ## TECHNOLOGIES UTILISEES
 

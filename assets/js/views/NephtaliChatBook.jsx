@@ -217,7 +217,7 @@ mutation{
 
         let createdThread = null;
 
-        alert(JSON.stringify(thread))
+        //alert(JSON.stringify(thread))
 
         if (!thread.id) {
             try {
@@ -271,7 +271,7 @@ mutation{
             setMessageText("");
             if (createdThread) thread.id = createdThread.id
             if (!data.errors) loadThreads();
-            else alert(JSON.stringify(data.errors))
+            //else alert(JSON.stringify(data.errors))
         } catch (response) {
 
         } finally {
@@ -295,7 +295,7 @@ mutation{
 
     const getUnseenMessages = function (thread, userId) {
         return thread.messages.edges.filter((message) => {
-            return message.metadata.edges.filter((metadata) => metadata.user._id === userId).length === 0
+            return message.metadata?.edges.filter((metadata) => metadata.user._id === userId).length === 0
         }).map(m => m.id)
     };
     /**
@@ -393,8 +393,8 @@ mutation{
                                 </div>
                             </div>
                         ))}
-                        {thread && !thread.messages.length &&
-                        <div className="text-gray-500 h-full flex items-center justify-center">No message !</div>}
+                        {(thread && thread.messages.edges?.length === 0) &&
+                        <div className="text-gray-500 h-full flex items-center justify-center">Pas de conversation !</div>}
                     </div>
                     {thread &&
                     <div className={`h-10 -mb-10 bg-gray-300 shadow flex items-center space-x-10 px-5 pr-20 py-2`}>

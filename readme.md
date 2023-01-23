@@ -49,6 +49,11 @@ php bin/console  assets:install
 ````
 mercure -d -a localhost:5000 -X -c * --jwt-key "!ChangeMe!" --publisher-jwt-key "!ChangeMe!"
 ````
+- Si vous êtes sur MAC lancez plutôt cette commande
+````
+./mercure -d --jwt-key '!ChangeThisMercureHubJWTSecretKey!' --publisher-jwt-key '!ChangeThisMercureHubJWTSecretKey!' --addr '127.0.0.1:5000' -X -c '*'
+
+````
 
 -Lancer le serveur:  
 S'assurer d'avoir installer symfony-cli (le binaire de symfony inclus dans ce projet est pour windows)
